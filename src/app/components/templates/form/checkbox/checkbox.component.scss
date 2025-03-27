@@ -1,0 +1,31 @@
+.slk-checkbox {
+  background-color: #ffffff;
+
+  span.draw {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 0;
+    border: 2px solid #000000;
+    vertical-align: middle;
+
+    i {
+      display: block;
+      width: 18px;
+      height: 18px;
+      margin: 2px;
+    }
+  }
+
+  &:hover, &.active {
+    color: #97060a;
+    cursor: pointer;
+
+    span {
+      border-color: #97060a;
+
+      i {
+        background-color: #97060a;
+      }
+    }
+  }
+}
