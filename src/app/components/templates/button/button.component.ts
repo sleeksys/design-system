@@ -1,11 +1,11 @@
-import {AfterViewInit, Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 
 export type ButtonTheme = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info';
 
 @Component({
   selector: 'slk-button',
   imports: [],
-  template: `<button class="slk-btn" #elt></button>`,
+  template: `<button class="slk-btn" #button></button>`,
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent implements AfterViewInit {
@@ -14,7 +14,7 @@ export class ButtonComponent implements AfterViewInit {
   @Input() theme: ButtonTheme | undefined;
   @Input() text: string | undefined;
 
-  @ViewChild('elt') elt: any;
+  @ViewChild('button') elt!: ElementRef;
 
   ngAfterViewInit() {
     this.elt.nativeElement.textContent = this.text || 'Button';
