@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  min-width: 1024px;
+  color: #555555;
+}
+
+header {
+  color: #ffffff;
+  background-color: #212529;
+  border-bottom: 1px solid #555555;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+
+.pull-left { float: left; }
+.container { margin: 0 auto; padding: 0 15px; width: 100%; max-width: 1200px; }
+
+#page { margin-top: 60px; padding: 20px 30px; }
+
+
+#filter-window { position: fixed; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, .7); }
+#filter-window .filter-window-content { width: 80%; max-width: 800px; min-width: 340px; margin: 10% auto 20px; background-color: #ffffff; border: 1px solid #555555; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; }
+#filter-window .filter-window-content > div { padding-left: 20px; padding-right: 30px; }
+
+#filter-window .filter-window-content .filtr-wd-ct-head { padding: 15px 20px; color: #ffffff; background-color: #97060a; }
+#filter-window .filter-window-content .filtr-wd-ct-body { padding: 30px 20px; }
+#filter-window .filter-window-content .filtr-wd-ct-foot { padding: 10px 20px; border-top: 1px solid #cccccc; text-align: right; }
+
+#filter-window .filter-window-content .filtr-wd-ct-foot button.filtr-wd-btn-cancel { float: left; }
+#filter-window .filter-window-content .filtr-wd-ct-foot button.mgn-l { margin-left: 10px; }
+
+.slk-chckbx { background-color: #ffffff; }
+.slk-chckbx span { display: inline-block; padding: 0px; border: 2px solid #000000; margin-right: 5px; vertical-align: middle; }
+.slk-chckbx span i { display: block; width: 18px; height: 18px; margin: 2px; }
+.slk-chckbx:hover, .slk-chckbx.active { color: #97060a; cursor: pointer; }
+.slk-chckbx:hover span, .slk-chckbx.active span { border-color: #97060a; }
+.slk-chckbx:hover span i, .slk-chckbx.active span i { background-color: #97060a; }
+
