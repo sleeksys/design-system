@@ -1,6 +1,15 @@
-<div class="slk-checkbox" #checkbox>
-  <span class="draw">
-    <i></i>
+<div class="slk-checkbox">
+  <div class="checkbox-wrapper">
+    <input type="checkbox"
+           id="{{ eltId }}"
+           (change)="onChanged($event)" />
+    <label for="{{ eltId }}" class="toggle">
+      <span></span>
+    </label>
+  </div>
+
+  <span class="label-text">
+    {{ label }}
   </span>
-  <span class="label"></span>
 </div>
+

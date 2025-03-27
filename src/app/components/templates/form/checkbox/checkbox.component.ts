@@ -1,4 +1,5 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, Output} from '@angular/core';
+import {SleekUtils} from '../../../../services/sleek.utils';
 
 @Component({
   selector: 'slk-checkbox',
@@ -11,23 +12,17 @@ export class CheckboxComponent implements AfterViewInit {
   @Output() onChange = new EventEmitter<boolean>();
   @Input() label: string | undefined;
 
-  @ViewChild('checkbox') elt!: ElementRef;
+  eltId = SleekUtils.generateUUID();
 
   ngAfterViewInit() {
-    const element = this.elt.nativeElement;
-
     // add label
-    element.querySelector('span.label').textContent = this.label || 'Checkbox label';
+    if (!this.label) {
+      this.label = 'Checkbox label';
+    }
+  }
 
-    // add change event listener
-    element.addEventListener('click', () => {
-      const checked = (element.classList.contains('active'));
-      if (checked) {
-        element.classList.remove('active');
-      } else {
-        element.classList.add('active');
-      }
-      this.onChange.emit(!checked);
-    });
+  onChanged(event: Event) {
+    const checkbox = (event.target as HTMLInputElement);
+    this.onChange.emit(checkbox.checked);
   }
 }
