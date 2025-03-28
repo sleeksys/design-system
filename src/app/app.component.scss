@@ -1,7 +1,4 @@
 .template-links {
-  width: 150px;
-  border-right: 2px solid #555555;
-
   a {
     color: #555555;
     display: block;
@@ -10,6 +7,15 @@
 
     &:hover {
       background-color: #f8f9fa;
+    }
+
+    &.headline {
+      color: #315676;
+      font-size: 70%;
+      font-weight: bold;
+      margin: 20px 0 0;
+      background-color: #f1f1f1;
+      text-transform: uppercase;
     }
   }
 }

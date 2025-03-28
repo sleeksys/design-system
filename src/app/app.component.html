@@ -1,29 +1,40 @@
 <header>
   <div class="container">
+    <img src="https://sleeksys.com/assets/images/logo-large.png" alt="sleeksys logo" />
     <nav>
-      <a routerLink="/" routerLinkActive="active">Home</a>
+      <a routerLink="/"
+         routerLinkActive="active">Design System</a>
     </nav>
   </div>
 </header>
 
 <div id="page">
   <div class="container">
-    <nav class="template-links">
-      <a routerLink="/button"
-         routerLinkActive="active">Button</a>
+    <div class="menu">
+      <nav class="template-links">
+        <a routerLink="/component/button"
+           routerLinkActive="active">Button</a>
 
-      <a routerLink="/form/checkbox"
-         routerLinkActive="active">Checkbox</a>
+        <a class="headline">forms</a>
 
-      <a routerLink="/form/radiobox"
-         routerLinkActive="active">Radiobox</a>
+        <a routerLink="/component/form/checkbox"
+           routerLinkActive="active">Checkbox</a>
 
-      <a routerLink="/modal"
-         routerLinkActive="active">Modal</a>
-    </nav>
-  </div>
+        <a routerLink="/component/form/radiobox"
+           routerLinkActive="active">Radiobox</a>
 
-  <div class="container">
-    <router-outlet />
+        <a class="headline">other components</a>
+
+        <a routerLink="/component/modal"
+           routerLinkActive="active">Modal</a>
+
+        <a routerLink="/component/table"
+           routerLinkActive="active">Table</a>
+      </nav>
+    </div>
+
+    <div class="component-overview">
+      <router-outlet />
+    </div>
   </div>
 </div>

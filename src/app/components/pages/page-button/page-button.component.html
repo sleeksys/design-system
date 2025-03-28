@@ -1,0 +1,71 @@
+<div class="component">
+  <div class="component-title">Button Themes</div>
+
+  <slk-button
+    [theme]="'primary'"
+    [text]="'Primary Button'"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('primary') }}</pre>
+  </code>
+
+  <slk-button
+    [theme]="'secondary'"
+    [text]="'Secondary Button'"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('secondary') }}</pre>
+  </code>
+
+  <slk-button
+    [theme]="'success'"
+    [text]="'Success Button'"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('success') }}</pre>
+  </code>
+
+  <slk-button
+    [theme]="'warning'"
+    [text]="'Warning Button'"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('warning') }}</pre>
+  </code>
+
+  <slk-button
+    [theme]="'danger'"
+    [text]="'Danger Button'"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('danger') }}</pre>
+  </code>
+
+  <slk-button
+    [theme]="'info'"
+    [text]="'Info Button'"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('info') }}</pre>
+  </code>
+
+  <slk-button
+    [theme]="'light'"
+    [text]="'Light Button'"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('light') }}</pre>
+  </code>
+
+  <slk-button
+    [theme]="'dark'"
+    [text]="'Dark Button'"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('dark') }}</pre>
+  </code>
+</div>
+
+<div class="component mgn-t">
+  <div class="component-title">Button Events</div>
+
+  <slk-button
+    [theme]="'primary'"
+    [text]="'Clickable Button'"
+    (onClick)="alert('Button clicked.')"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('primary', true) }}</pre>
+  </code>
+</div>
