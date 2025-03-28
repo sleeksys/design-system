@@ -12,7 +12,7 @@ export class CheckboxComponent implements AfterViewInit {
   @Output() onChange = new EventEmitter<boolean>();
   @Input() label: string | undefined;
 
-  eltId = SleekUtils.generateUUID();
+  eltId = SleekUtils.generateHash();
 
   ngAfterViewInit() {
     // add label

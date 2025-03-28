@@ -60,7 +60,7 @@
     margin: -18px;
     width: 56px;
     height: 56px;
-    background-color: #c00000;
+    background-color: rgba(0, 0, 0, .8);
     border-radius: 50%;
     transform: scale(0);
     opacity: 1;
@@ -68,11 +68,11 @@
   }
 
   .checkbox-wrapper input:checked + .toggle:before {
-    background: #947ADA;
+    background: rgba(0, 0, 0, .3);
   }
 
   .checkbox-wrapper input:checked + .toggle span {
-    background: #c00000;
+    background: rgba(0, 0, 0, .8);
     transform: translateX(20px);
     transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
     box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);

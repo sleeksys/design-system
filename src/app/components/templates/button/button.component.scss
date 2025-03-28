@@ -1,6 +1,6 @@
 .slk-btn {
   padding: 8px 15px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   border-radius: 3px;
   cursor: pointer;
 
@@ -10,7 +10,7 @@
 
   &.slk-btn--primary {
     color: #ffffff;
-    background-color: #007bff;
+    background-color: #315676;
   }
 
   &.slk-btn--secondary {
@@ -25,7 +25,7 @@
 
   &.slk-btn--danger {
     color: #ffffff;
-    background-color: #dc3545;
+    background-color: #c00000;
   }
 
   &.slk-btn--warning {
@@ -36,6 +36,17 @@
   &.slk-btn--info {
     color: #ffffff;
     background-color: #17a2b8;
+  }
+
+  &.slk-btn--light {
+    color: #555555;
+    background-color: #ffffff;
+    border-color: rgba(0, 0, 0, .8);
+  }
+
+  &.slk-btn--dark {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, .8);
   }
 }
 

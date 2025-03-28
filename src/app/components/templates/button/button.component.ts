@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 
-export type ButtonTheme = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info';
+export type ButtonTheme = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark';
 
 @Component({
   selector: 'slk-button',
