@@ -2,8 +2,9 @@
   <div class="checkbox-wrapper">
     <input type="checkbox"
            id="{{ eltId }}"
+           [checked]="checked"
            (change)="onChanged($event)" />
-    <label for="{{ eltId }}" class="toggle">
+    <label for="{{ eltId }}" [className]="toggleClazzName">
       <span></span>
     </label>
   </div>

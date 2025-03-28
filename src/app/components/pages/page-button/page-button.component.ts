@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ButtonComponent, ButtonTheme} from '../../templates/button/button.component';
+import {ButtonComponent} from '../../templates/button/button.component';
+import {ThemeColor} from '../../templates/model';
 
 @Component({
   selector: 'page-button',
@@ -13,16 +14,17 @@ export class PageButtonComponent implements OnInit {
   ngOnInit() {
   }
 
-  getCodeRaw(theme: ButtonTheme, appendClick?: boolean) {
-    const onClickCodeRaw = appendClick ? `\n\t(onClick)="alert('Button clicked!')"` : '';
+  getCodeRaw(theme: ThemeColor, appendEventListener?: boolean) {
+    const eventCodeRaw = appendEventListener
+      ? `\n\t(onClick)="alert('Button clicked!')"` : '';
     let text = theme.charAt(0).toUpperCase() + theme.slice(1) + ' Button';
-    if (appendClick) {
+    if (appendEventListener) {
       text = `Clickable Button`;
     }
 
     return `<slk-button` +
       `\n\t[theme]="'${theme}'"` +
-      `\n\t[text]="'${text}'"${onClickCodeRaw}></slk-button>`
+      `\n\t[text]="'${text}'"${eventCodeRaw}></slk-button>`
   }
 
   protected readonly alert = alert;

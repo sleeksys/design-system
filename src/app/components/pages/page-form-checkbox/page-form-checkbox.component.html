@@ -1,0 +1,83 @@
+<div class="component">
+  <div class="component-title">Checkbox Classic</div>
+
+  <slk-checkbox [label]="'Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw(null, null) }}</pre>
+  </code>
+  <code>
+    <pre>{{ getCodeRaw(null, false) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">Checkbox Themes</div>
+
+  <slk-checkbox [theme]="'primary'"
+                [checked]="true"
+                [label]="'Primary Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw('primary', true) }}</pre>
+  </code>
+
+  <slk-checkbox [theme]="'secondary'"
+                [checked]="true"
+                [label]="'Secondary Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw('secondary', true) }}</pre>
+  </code>
+
+  <slk-checkbox [theme]="'success'"
+                [checked]="true"
+                [label]="'Success Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw('success', true) }}</pre>
+  </code>
+
+  <slk-checkbox [theme]="'warning'"
+                [checked]="true"
+                [label]="'Warning Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw('warning', true) }}</pre>
+  </code>
+
+  <slk-checkbox [theme]="'danger'"
+                [checked]="true"
+                [label]="'Danger Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw('danger', true) }}</pre>
+  </code>
+
+  <slk-checkbox [theme]="'info'"
+                [checked]="true"
+                [label]="'Info Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw('info', true) }}</pre>
+  </code>
+
+  <slk-checkbox [theme]="'light'"
+                [checked]="true"
+                [label]="'Light Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw('light', true) }}</pre>
+  </code>
+
+  <slk-checkbox [theme]="'dark'"
+                [checked]="true"
+                [label]="'Dark Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw('dark', true) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">Checkbox Events</div>
+
+  <slk-checkbox [label]="'Checkbox Event'"
+                (onChange)="alert('Checkbox changed')"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw(null, null, true) }}</pre>
+  </code>
+</div>

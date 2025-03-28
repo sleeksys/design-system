@@ -1,6 +1,5 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
-
-export type ButtonTheme = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark';
+import {ThemeColor} from '../model';
 
 @Component({
   selector: 'slk-button',
@@ -11,8 +10,8 @@ export type ButtonTheme = 'primary' | 'secondary' | 'success' | 'warning' | 'dan
 export class ButtonComponent implements AfterViewInit {
 
   @Output() onClick = new EventEmitter();
-  @Input() theme: ButtonTheme | undefined;
-  @Input() text: string | undefined;
+  @Input() theme!: ThemeColor;
+  @Input() text!: string;
 
   @ViewChild('button') elt!: ElementRef;
 
