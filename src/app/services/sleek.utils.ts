@@ -11,4 +11,8 @@ export class SleekUtils {
   static generateHash() {
     return this.generateUUID().substring(0, 8);
   }
+
+  static capitalizeFirstLetter(text: string) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
 }

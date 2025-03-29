@@ -1,6 +1,6 @@
 .template-links {
   a {
-    color: #555555;
+    color: #315676;
     display: block;
     padding: 8px 15px;
     text-decoration: none;
@@ -15,6 +15,12 @@
       margin: 20px 0 0;
       background-color: #f1f1f1;
       text-transform: uppercase;
+    }
+
+    &:not(.active)[aria-disabled="true"] {
+      color: #999999;
+      // background-color: #f9f9f9;
+      // cursor: not-allowed;
     }
 
     &.active {
