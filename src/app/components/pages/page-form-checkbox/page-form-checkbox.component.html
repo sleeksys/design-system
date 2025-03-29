@@ -1,12 +1,40 @@
 <div class="component">
   <div class="component-title">Checkbox Classic</div>
 
-  <slk-checkbox [label]="'Checkbox'"></slk-checkbox>
+  <slk-checkbox [switchMode]="false"
+                [label]="'Checkbox'"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw(null, null) }}</pre>
+    <pre>{{ getCodeRaw(false, null, null, false) }}</pre>
   </code>
   <code>
-    <pre>{{ getCodeRaw(null, false) }}</pre>
+    <pre>{{ getCodeRaw(false, null, false, false) }}</pre>
+  </code>
+
+  <slk-checkbox [switchMode]="false"
+                [checked]="true"
+                [label]="'Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw(false, null, true, false) }}</pre>
+  </code>
+
+  <slk-checkbox [switchMode]="false"
+                [theme]="'danger'"
+                [checked]="true"
+                [label]="'Checkbox with Theme'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw(false, 'danger', true, false) }}</pre>
+  </code>
+</div>
+
+<div class="component mgn-t">
+  <div class="component-title">Checkbox Switch</div>
+
+  <slk-checkbox [label]="'Checkbox'"></slk-checkbox>
+  <code>
+    <pre>{{ getCodeRaw(true, null, null) }}</pre>
+  </code>
+  <code>
+    <pre>{{ getCodeRaw(true, null, false) }}</pre>
   </code>
 </div>
 
@@ -18,56 +46,56 @@
                 [checked]="true"
                 [label]="'Primary Checkbox'"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw('primary', true) }}</pre>
+    <pre>{{ getCodeRaw(true, 'primary', true) }}</pre>
   </code>
 
   <slk-checkbox [theme]="'secondary'"
                 [checked]="true"
                 [label]="'Secondary Checkbox'"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw('secondary', true) }}</pre>
+    <pre>{{ getCodeRaw(true, 'secondary', true) }}</pre>
   </code>
 
   <slk-checkbox [theme]="'success'"
                 [checked]="true"
                 [label]="'Success Checkbox'"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw('success', true) }}</pre>
+    <pre>{{ getCodeRaw(true, 'success', true) }}</pre>
   </code>
 
   <slk-checkbox [theme]="'warning'"
                 [checked]="true"
                 [label]="'Warning Checkbox'"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw('warning', true) }}</pre>
+    <pre>{{ getCodeRaw(true, 'warning', true) }}</pre>
   </code>
 
   <slk-checkbox [theme]="'danger'"
                 [checked]="true"
                 [label]="'Danger Checkbox'"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw('danger', true) }}</pre>
+    <pre>{{ getCodeRaw(true, 'danger', true) }}</pre>
   </code>
 
   <slk-checkbox [theme]="'info'"
                 [checked]="true"
                 [label]="'Info Checkbox'"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw('info', true) }}</pre>
+    <pre>{{ getCodeRaw(true, 'info', true) }}</pre>
   </code>
 
   <slk-checkbox [theme]="'light'"
                 [checked]="true"
                 [label]="'Light Checkbox'"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw('light', true) }}</pre>
+    <pre>{{ getCodeRaw(true, 'light', true) }}</pre>
   </code>
 
   <slk-checkbox [theme]="'dark'"
                 [checked]="true"
                 [label]="'Dark Checkbox'"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw('dark', true) }}</pre>
+    <pre>{{ getCodeRaw(true, 'dark', true) }}</pre>
   </code>
 </div>
 
@@ -78,6 +106,6 @@
   <slk-checkbox [label]="'Checkbox Event'"
                 (onChange)="alert('Checkbox changed')"></slk-checkbox>
   <code>
-    <pre>{{ getCodeRaw(null, null, true) }}</pre>
+    <pre>{{ getCodeRaw(true, null, null, true) }}</pre>
   </code>
 </div>

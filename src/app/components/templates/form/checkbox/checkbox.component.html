@@ -1,16 +1,28 @@
-<div class="slk-checkbox">
-  <div class="checkbox-wrapper">
-    <input type="checkbox"
-           id="{{ eltId }}"
-           [checked]="checked"
-           (change)="onChanged($event)" />
-    <label for="{{ eltId }}" [className]="toggleClazzName">
-      <span></span>
-    </label>
+<!-- Switch mode active -->
+<ng-container *ngIf="switchMode">
+  <div class="slk-checkbox">
+    <div class="checkbox-wrapper">
+      <input type="checkbox"
+             id="{{ eltId }}"
+             [checked]="checked"
+             (change)="onChanged($event)" />
+      <label for="{{ eltId }}" [className]="toggleClazzName">
+        <span></span>
+      </label>
+    </div>
+
+    <span class="label-text">{{ label }}</span>
   </div>
+</ng-container>
 
-  <span class="label-text">
-    {{ label }}
-  </span>
-</div>
 
+<!-- Classic checkbox -->
+<ng-container *ngIf="!switchMode">
+  <div class="slk-checkbox">
+    <div [className]="squareClazzName"
+         (click)="onChecked()">
+      <span></span>
+    </div>
+    <span class="label-text">{{ label }}</span>
+  </div>
+</ng-container>
