@@ -1,0 +1,179 @@
+<div class="component">
+  <div class="component-title">
+    Table
+    <span class="text-small text-muted">(default Locale en-EN)</span>
+  </div>
+
+  <table id="slkTable1" slkTable format="striped">
+    <thead>
+    <tr>
+      <th>Product Name</th>
+      <th slkTableCell align="center">Retail Price</th>
+      <th slkTableCell align="center">Percentage</th>
+      <th>Datetime</th>
+      <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell
+          format="text">Product 1</td>
+      <td slkTableCell
+          format="number"
+          align="center">45678</td>
+      <td slkTableCell
+          format="percentage"
+          align="center">73</td>
+      <td slkTableCell
+          format="datetime"
+          [text]="now"></td>
+      <td slkTableCell
+          format="image"
+          [style]="{width: '30px', height: '30px'}"
+          link="https://sleeksys.com/assets/images/logo.png"></td>
+    </tr>
+    <tr>
+      <td slkTableCell
+          format="text">Product 2</td>
+      <td slkTableCell
+          format="number"
+          align="center">45678</td>
+      <td slkTableCell
+          format="percentage"
+          align="center">99.4</td>
+      <td slkTableCell
+          format="datetime"
+          [text]="now"></td>
+      <td slkTableCell
+          format="image"
+          [style]="{width: '30px', height: '30px'}"
+          link="https://sleeksys.com/assets/images/logo.png"></td>
+    </tr>
+    <tr>
+      <td slkTableCell
+          format="text">Product 3</td>
+      <td slkTableCell
+          format="number"
+          align="center">45678</td>
+      <td slkTableCell
+          format="percentage"
+          align="center">65.9</td>
+      <td slkTableCell
+          format="datetime"
+          [text]="now"></td>
+      <td slkTableCell
+          format="image"
+          [style]="{width: '30px', height: '30px'}"
+          link="https://sleeksys.com/assets/images/logo.png"></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <code>
+    <pre rel="slkTable1"></pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">Table with Locale en-EN</div>
+
+  <table id="slkTable2" slkTable format="striped" locale="en-EN">
+    <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Retail Price</th>
+      <th>Percentage</th>
+      <th>Date</th>
+      <th>Link</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell
+          format="text">Product 1</td>
+      <td slkTableCell
+          format="number">45678</td>
+      <td slkTableCell
+          format="percentage">73</td>
+      <td slkTableCell
+          format="date"
+          [text]="now"></td>
+      <td slkTableCell
+          format="link"
+          text="Google"
+          link="https://www.google.com"></td>
+    </tr>
+    <tr>
+      <td slkTableCell
+          format="text">Product 2</td>
+      <td slkTableCell
+          format="number">45678</td>
+      <td slkTableCell
+          format="percentage">99.4</td>
+      <td slkTableCell
+          format="date"
+          [text]="now"></td>
+      <td slkTableCell
+          format="link"
+          link="https://www.google.com"></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <code>
+    <pre rel="slkTable2"></pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">Table with Locale de-DE</div>
+
+  <table id="slkTable3" slkTable format="striped" locale="de-DE">
+    <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Retail Price</th>
+      <th>Percentage</th>
+      <th>Date</th>
+      <th>Link</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell
+          format="text">Product 1</td>
+      <td slkTableCell
+          format="number">45678</td>
+      <td slkTableCell
+          format="percentage">73</td>
+      <td slkTableCell
+          format="date"
+          [text]="now"></td>
+      <td slkTableCell
+          format="link"
+          text="Google"
+          link="https://www.google.com"></td>
+    </tr>
+    <tr>
+      <td slkTableCell
+          format="text">Product 2</td>
+      <td slkTableCell
+          format="number">45678</td>
+      <td slkTableCell
+          format="percentage">99.4</td>
+      <td slkTableCell
+          format="date"
+          [text]="now"></td>
+      <td slkTableCell
+          format="link"
+          link="https://www.google.com"></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <code>
+    <pre rel="slkTable3"></pre>
+  </code>
+</div>

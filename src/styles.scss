@@ -89,6 +89,8 @@ header {
   pre {
     margin: 0;
     padding: 0;
+    overflow: scroll;
+    display: grid;
   }
 
   code {
@@ -151,4 +153,13 @@ header {
 }
 
 
+.text-small {
+  font-size: 80%;
+  font-weight: 500;
+}
 
+.text-muted {
+  color: #999999;
+}
+
+@import "app/assets/style/table.component";

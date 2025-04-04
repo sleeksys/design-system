@@ -1,5 +1,6 @@
 export type ThemeColor = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | 'light' | 'dark';
 export type TableCellType = 'text' | 'number' | 'date' | 'time' | 'datetime' | 'percentage' | 'image' | 'link';
+export type SlkTableCellFormat = 'text' | 'number' | 'date' | 'time' | 'datetime' | 'percentage' | 'image' | 'link';
 
 export interface DataTable {
   // head should have only one row
@@ -13,6 +14,7 @@ export interface DataTable {
 export interface DataTableCell {
   type?: TableCellType;
   value: string | number | Date | null;
+  subtext?: string | number | Date;
   urlText?: string;
   align?: 'left' | 'center' | 'right';
 }
