@@ -4,6 +4,7 @@ import {PageAlertComponent} from './components/pages/page-alert/page-alert.compo
 import {PageButtonComponent} from './components/pages/page-button/page-button.component';
 import {PageFormCheckboxComponent} from './components/pages/page-form-checkbox/page-form-checkbox.component';
 import {PageMaintenanceComponent} from './components/pages/page-maintenance/page-maintenance.component';
+import {PageAccordionComponent} from './components/pages/page-accordion/page-accordion.component';
 import {PageTableComponent} from './components/pages/page-table/page-table.component';
 
 export const routes: Routes = [
@@ -19,7 +20,7 @@ export const routes: Routes = [
           {path: 'input', component: PageMaintenanceComponent}, // TODO: add page Input
           {path: 'radiobox', component: PageMaintenanceComponent} // TODO: add page Radiobox
         ]},
-      {path: 'accordion', component: PageMaintenanceComponent}, // TODO: add page Accordion
+      {path: 'accordion', component: PageAccordionComponent}, // TODO: add page Accordion
       {path: 'banner', component: PageMaintenanceComponent}, // TODO: add page Banner
       {path: 'modal', component: PageMaintenanceComponent}, // TODO: add page Modal
       {path: 'pagination', component: PageMaintenanceComponent}, // TODO: add page Pagination

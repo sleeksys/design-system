@@ -1,0 +1,119 @@
+<div class="component">
+  <div class="component-title">
+    Accordion
+    <span class="text-small text-muted">(slkAccordion)</span>
+  </div>
+
+  <slk-accordion [items]="items1"></slk-accordion>
+  <code>
+    <pre>{{ getCodeRaw(true) }}</pre>
+  </code>
+
+  <slk-accordion [items]="items2"></slk-accordion>
+  <code>
+    <pre>{{ getCodeRaw(true, false) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    slkAccordion
+    <span class="text-small text-muted">(List accepts multiple open items)</span>
+  </div>
+
+  <slk-accordion [items]="items3"
+                 [allowMany]="true"></slk-accordion>
+  <code>
+    <pre>{{ getCodeRaw(true, true) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    slkAccordion
+    <span class="text-small text-muted">(Read-Only accordion)</span>
+  </div>
+
+  <slk-accordion [items]="items4"
+                 [readonly]="true"></slk-accordion>
+  <code>
+    <pre>{{ getCodeRaw(true, undefined, true) }}</pre>
+  </code>
+</div>
+
+<div class="component mgn-t">
+  <div class="component-title">
+    slkAccordion
+    <span class="text-small text-muted">(Empty or undefined list)</span>
+  </div>
+
+  <slk-accordion [items]="[]"></slk-accordion>
+  <code>
+    <pre>{{ getCodeRaw(false) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    slkAccordion
+    <span class="text-small text-muted">(Attributes)</span>
+  </div>
+
+  <table slkTable format="striped" valign="top">
+    <thead>
+    <tr>
+      <th slkTableCell>Attribut Name</th>
+      <th slkTableCell>Description</th>
+      <th slkTableCell>Possible Values</th>
+      <th slkTableCell>Default Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[items]</td>
+      <td slkTableCell>An list of items to display.</td>
+      <td slkTableCell></td>
+      <td slkTableCell>
+        <i>An empty array.</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell [align]="'right'" [style]="{color: '#C00000'}">title [string]</td>
+      <td slkTableCell>[Attribute]: The title of the accordion item.</td>
+      <td slkTableCell></td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell [align]="'right'" [style]="{color: '#C00000'}">content [string]</td>
+      <td slkTableCell>[Attribute]: The text content of the accordion item.</td>
+      <td slkTableCell></td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell [align]="'right'" [style]="{color: '#C00000'}">active [boolean]</td>
+      <td slkTableCell>[Attribute]: The display status of the accordion item.</td>
+      <td slkTableCell>true, false</td>
+      <td slkTableCell>false</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[allowMany]</td>
+      <td slkTableCell>Indicates if the list accepts multiple open items.</td>
+      <td slkTableCell>true, false</td>
+      <td slkTableCell>false</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[readonly]</td>
+      <td slkTableCell>Indicates if the accordion items can be toggled.</td>
+      <td slkTableCell>true, false</td>
+      <td slkTableCell>false</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
