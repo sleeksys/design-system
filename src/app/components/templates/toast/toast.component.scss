@@ -1,0 +1,51 @@
+.slk-toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+
+  &.visible {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  // Theme colors
+  &.slk-toast-theme-primary { background-color: #cce5ff; color: #004085; }
+  &.slk-toast-theme-secondary { background-color: #e2e3e5; color: #383d41; }
+  &.slk-toast-theme-success { background-color: #d4edda; color: #155724; }
+  &.slk-toast-theme-warning { background-color: #fff3cd; color: #856404; }
+  &.slk-toast-theme-danger { background-color: #f8d7da; color: #721c24; }
+  &.slk-toast-theme-info { background-color: #d1ecf1; color: #0c5460; }
+  &.slk-toast-theme-light { background-color: #fefefe; color: #818182; }
+  &.slk-toast-theme-dark { background-color: #d6d8d9; color: #1b1e21; }
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

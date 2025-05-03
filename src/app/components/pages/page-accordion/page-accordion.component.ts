@@ -12,7 +12,7 @@ import {TableDirective} from '../../templates/table/table.directive';
     TableDirective
   ],
   templateUrl: './page-accordion.component.html',
-  styles: `code { margin-bottom: 50px; }`
+  styles: `code { margin-bottom: 30px; }`
 })
 export class PageAccordionComponent implements OnInit {
 
@@ -46,9 +46,9 @@ export class PageAccordionComponent implements OnInit {
     let propItems = hasItems ? `[items]="..."` : '[items]="[]"';
     let propAllowMany = (typeof allowMany !== 'undefined') ? `[allowMany]="${allowMany}"` : '';
     let propReadOnly = (typeof readonly !== 'undefined') ? `[readonly]="${readonly}"` : '';
-    let props = '' + propItems
-      + (hasItems ? ' ' : '') + propAllowMany
-      + (allowMany ? ' ' : '') + propReadOnly;
+    let props = propItems
+      + (hasItems && allowMany ? ' ' : '') + propAllowMany
+      + (allowMany && readonly ? ' ' : '') + propReadOnly;
     return `<slk-accordion ${props}></slk-accordion>`
   }
 }

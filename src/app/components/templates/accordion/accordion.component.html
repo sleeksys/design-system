@@ -1,9 +1,9 @@
-<div class="accordion">
+<div class="slk-accordion">
   <div *ngFor="let item of items"
-       [className]="'accordion-item' + (item.active ? ' active' : '')">
-    <div [className]="'accordion-header' + (readonly ? ' accordion-header-disabled' : '')"
+       [className]="'slk-accordion-item' + (item.active ? ' active' : '')">
+    <div [className]="'slk-accordion-header' + (readonly ? ' slk-accordion-header-disabled' : '')"
          (click)="toggle(item)">{{ item.title }}</div>
-    <div class="accordion-content">
+    <div class="slk-accordion-content">
       <p>{{ item.content }}</p>
     </div>
   </div>

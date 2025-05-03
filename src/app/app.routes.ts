@@ -6,6 +6,7 @@ import {PageFormCheckboxComponent} from './components/pages/page-form-checkbox/p
 import {PageMaintenanceComponent} from './components/pages/page-maintenance/page-maintenance.component';
 import {PageAccordionComponent} from './components/pages/page-accordion/page-accordion.component';
 import {PageTableComponent} from './components/pages/page-table/page-table.component';
+import {PageToastComponent} from './components/pages/page-toast/page-toast.component';
 
 export const routes: Routes = [
   // add route for page-button
@@ -25,7 +26,7 @@ export const routes: Routes = [
       {path: 'modal', component: PageMaintenanceComponent}, // TODO: add page Modal
       {path: 'pagination', component: PageMaintenanceComponent}, // TODO: add page Pagination
       {path: 'table', component: PageTableComponent},
-      {path: 'toast', component: PageMaintenanceComponent} // TODO: add page Toast
+      {path: 'toast', component: PageToastComponent} // TODO: add page Toast
     ]
   }
 ];

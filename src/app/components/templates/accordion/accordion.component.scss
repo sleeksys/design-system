@@ -1,32 +1,32 @@
-.accordion {
+.slk-accordion {
   width: 100%;
   margin: 20px auto;
   border: 1px solid #dddddd;
   border-radius: 5px;
   overflow: hidden;
 
-  .accordion-item {
+  .slk-accordion-item {
     border-bottom: 1px solid #dddddd;
   }
 
-  .accordion-header {
+  .slk-accordion-header {
     padding: 15px;
     background: #f5f5f5;
     cursor: pointer;
     font-weight: bold;
 
-    &.accordion-header-disabled {
+    &.slk-accordion-header-disabled {
       cursor: not-allowed;
     }
   }
 
-  .accordion-content {
+  .slk-accordion-content {
     padding: 15px;
     display: none;
     background: white;
   }
 
-  .accordion-item.active .accordion-content {
+  .slk-accordion-item.active .slk-accordion-content {
     display: block;
   }
 }

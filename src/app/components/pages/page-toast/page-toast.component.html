@@ -1,0 +1,45 @@
+<div class="component">
+  <div class="component-title">
+    Toast
+    <span class="text-small text-muted">(slkToast)</span>
+  </div>
+
+  <slk-button [theme]="'primary'"
+              [text]="'Show a Toast'"
+              (onClick)="showToast1Click()"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw() }}</pre>
+  </code>
+
+  <slk-button [theme]="'primary'"
+              [text]="'Show a Toast with 5 seconds timeout'"
+              (onClick)="showToast2Click()"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw(undefined, 5) }}</pre>
+  </code>
+
+  <slk-button [theme]="'success'"
+              [text]="'Show a Toast with theme'"
+              (onClick)="showToast3Click()"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('success') }}</pre>
+  </code>
+
+  <slk-button [theme]="'danger'"
+              [text]="'Show a Toast with theme'"
+              (onClick)="showToast4Click()"></slk-button>
+  <code>
+    <pre>{{ getCodeRaw('danger') }}</pre>
+  </code>
+
+  <slk-toast [display]="showToast1">Toast content.</slk-toast>
+
+  <slk-toast [timeout]="5"
+             [display]="showToast2">Toast content.</slk-toast>
+
+  <slk-toast [theme]="'success'"
+             [display]="showToast3">Toast content.</slk-toast>
+
+  <slk-toast [theme]="'danger'"
+             [display]="showToast4">Toast content.</slk-toast>
+</div>
