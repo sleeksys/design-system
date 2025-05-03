@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TableCellDirective} from '../../templates/table/table-cell.directive';
 import {TableDirective} from '../../templates/table/table.directive';
 
@@ -10,17 +10,12 @@ import {TableDirective} from '../../templates/table/table.directive';
   ],
   templateUrl: './page-table.component.html'
 })
-export class PageTableComponent implements AfterViewInit {
+export class PageTableComponent implements OnInit {
 
   now = new Date();
 
-  ngAfterViewInit() {
-    document.querySelectorAll('pre')
-      .forEach(elt => {
-        if (elt.getAttribute('rel')) {
-          elt.innerText = this.getTableRaw(elt.getAttribute('rel') || '');
-        }
-      });
+  ngOnInit() {
+    this.completeTagCode();
   }
 
   getTableRaw(tableId: string) {
@@ -43,6 +38,15 @@ export class PageTableComponent implements AfterViewInit {
       return `${this.formatRawCode(html)}`;
     }
     return '';
+  }
+
+  private completeTagCode() {
+    document.querySelectorAll('pre')
+      .forEach(elt => {
+        if (elt.getAttribute('rel')) {
+          elt.innerText = this.getTableRaw(elt.getAttribute('rel') || '');
+        }
+      });
   }
 
   private formatRawCode(html: string) {

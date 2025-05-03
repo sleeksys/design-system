@@ -1,5 +1,116 @@
 <div class="component">
   <div class="component-title">
+    slkTable
+    <span class="text-small text-muted">(Table directive)</span>
+  </div>
+
+  <table slkTable format="striped" valign="top">
+    <thead>
+    <tr>
+      <th slkTableCell>Attribut Name</th>
+      <th slkTableCell>Description</th>
+      <th slkTableCell>Possible Values</th>
+      <th slkTableCell>Default Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[locale]</td>
+      <td slkTableCell>Allows the manipulation of Unicode locales.</td>
+      <td slkTableCell>de-DE, en-EN</td>
+      <td slkTableCell>en-EN</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[valign]</td>
+      <td slkTableCell>Defines the vertical alignment in the table cell.</td>
+      <td slkTableCell>top, middle, middle</td>
+      <td slkTableCell>middle</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[format]</td>
+      <td slkTableCell>Formats the table cell to a custom design.</td>
+      <td slkTableCell>striped</td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    slkTableCell
+    <span class="text-small text-muted">(Table column directive)</span>
+  </div>
+
+  <table slkTable format="striped" valign="top">
+    <thead>
+    <tr>
+      <th>Attribut Name</th>
+      <th>Description</th>
+      <th>Possible Values</th>
+      <th>Default Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[format]</td>
+      <td slkTableCell>Allows the manipulation of Unicode locales.</td>
+      <td slkTableCell>
+        SlkTableCellFormat
+        <div class="text-muted text-small">
+          text, number, date, time, datetime, percentage, image, link
+        </div>
+      </td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[text]</td>
+      <td slkTableCell>The text to show. If undefined, the directive uses the element reference textContent.</td>
+      <td slkTableCell [style]="{color: '#28a745'}">
+        <pre>string | any</pre>
+      </td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[link]</td>
+      <td slkTableCell>The link to use in anchor or as image tag.<br>Used in format 'image' and 'link'.</td>
+      <td slkTableCell [style]="{color: '#28a745'}">
+        <pre>string</pre>
+      </td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[style]</td>
+      <td slkTableCell>Adds a custom style to the table cell.</td>
+      <td slkTableCell [style]="{color: '#28a745'}">
+        <pre>object</pre>
+      </td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[align]</td>
+      <td slkTableCell>Defines the text align in the table cell.</td>
+      <td slkTableCell>left, center, right</td>
+      <td slkTableCell>left</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
     Table
     <span class="text-small text-muted">(default Locale en-EN)</span>
   </div>

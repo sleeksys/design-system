@@ -1,0 +1,102 @@
+<div class="component">
+  <div class="component-title">
+    Alert
+    <span class="text-small text-muted">(slkAlert)</span>
+  </div>
+
+  <slk-alert [theme]="'primary'">Primary Alert</slk-alert>
+  <code>
+    <pre>{{ getCodeRaw('primary') }}</pre>
+  </code>
+
+  <slk-alert [theme]="'secondary'">Secondary Alert</slk-alert>
+  <code>
+    <pre>{{ getCodeRaw('secondary') }}</pre>
+  </code>
+
+  <slk-alert [theme]="'success'">Success Alert</slk-alert>
+  <code>
+    <pre>{{ getCodeRaw('success') }}</pre>
+  </code>
+
+  <slk-alert [theme]="'warning'">Warning Alert</slk-alert>
+  <code>
+    <pre>{{ getCodeRaw('warning') }}</pre>
+  </code>
+
+  <slk-alert [theme]="'danger'">Danger Alert</slk-alert>
+  <code>
+    <pre>{{ getCodeRaw('danger') }}</pre>
+  </code>
+
+  <slk-alert [theme]="'info'">Info Alert</slk-alert>
+  <code>
+    <pre>{{ getCodeRaw('info') }}</pre>
+  </code>
+
+  <slk-alert [theme]="'light'">Light Alert</slk-alert>
+  <code>
+    <pre>{{ getCodeRaw('light') }}</pre>
+  </code>
+
+  <slk-alert [theme]="'dark'">Dark Alert</slk-alert>
+  <code>
+    <pre>{{ getCodeRaw('dark') }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    slkAlert
+    <span class="text-small text-muted">(Text alignment)</span>
+  </div>
+
+  <slk-alert [align]="'left'">Alert - Text aligned <b>LEFT</b></slk-alert>
+  <code>
+    <pre>{{ getCodeRaw(null, 'left') }}</pre>
+  </code>
+
+  <slk-alert [align]="'center'">Alert - Text aligned <b>CENTER</b></slk-alert>
+  <code>
+    <pre>{{ getCodeRaw(null, 'center') }}</pre>
+  </code>
+
+  <slk-alert [align]="'right'">Alert - Text aligned <b>RIGHT</b></slk-alert>
+  <code>
+    <pre>{{ getCodeRaw(null, 'right') }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    slkAlert
+    <span class="text-small text-muted">(Attributes)</span>
+  </div>
+
+  <table slkTable format="striped" valign="top">
+    <thead>
+    <tr>
+      <th slkTableCell>Attribut Name</th>
+      <th slkTableCell>Description</th>
+      <th slkTableCell>Possible Values</th>
+      <th slkTableCell>Default Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[theme]</td>
+      <td slkTableCell>Theme color</td>
+      <td slkTableCell>primary, secondary, success, warning, danger, info, light, dark</td>
+      <td slkTableCell>secondary</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[align]</td>
+      <td slkTableCell>Text&nbsp;alignment</td>
+      <td slkTableCell>left, center, right</td>
+      <td slkTableCell>left</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

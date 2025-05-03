@@ -1,6 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {TableCellDirective} from '../../templates/table/table-cell.directive';
-import {TableDirective} from '../../templates/table/table.directive';
 
 @Component({
   selector: 'page-overview',

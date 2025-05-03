@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import {OverviewComponent} from './components/pages/overview/overview.component';
+import {PageAlertComponent} from './components/pages/page-alert/page-alert.component';
 import {PageButtonComponent} from './components/pages/page-button/page-button.component';
 import {PageFormCheckboxComponent} from './components/pages/page-form-checkbox/page-form-checkbox.component';
 import {PageMaintenanceComponent} from './components/pages/page-maintenance/page-maintenance.component';
@@ -10,7 +11,7 @@ export const routes: Routes = [
   {path: '', redirectTo: 'overview', pathMatch: 'full'},
   {path: 'overview', component: OverviewComponent},
   {path: 'component', children: [
-      {path: 'alert', component: PageMaintenanceComponent}, // TODO: add page Alert
+      {path: 'alert', component: PageAlertComponent}, // TODO: add page Alert
       {path: 'button', component: PageButtonComponent},
       {path: 'form', children: [
           {path: 'checkbox', component: PageFormCheckboxComponent},

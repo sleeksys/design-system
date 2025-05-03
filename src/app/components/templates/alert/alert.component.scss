@@ -1,0 +1,22 @@
+.alert {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+
+  // Theme colors
+  &.alert-primary { background-color: #cce5ff; color: #004085; }
+  &.alert-secondary { background-color: #e2e3e5; color: #383d41; }
+  &.alert-success { background-color: #d4edda; color: #155724; }
+  &.alert-warning { background-color: #fff3cd; color: #856404; }
+  &.alert-danger { background-color: #f8d7da; color: #721c24; }
+  &.alert-info { background-color: #d1ecf1; color: #0c5460; }
+  &.alert-light { background-color: #fefefe; color: #818182; }
+  &.alert-dark { background-color: #d6d8d9; color: #1b1e21; }
+
+  // Alignment
+  &.alert-align-left { text-align: left; }
+  &.alert-align-center { text-align: center; }
+  &.alert-align-right { text-align: right; }
+}

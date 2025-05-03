@@ -10,7 +10,7 @@ export class TableCellDirective implements OnChanges {
   @Input() text: string|any;
   @Input() link?: string;
   @Input() style?: any;
-  @Input() align?: 'left' | 'center' | 'right';
+  @Input() align: 'left' | 'center' | 'right' = 'left';
 
   constructor(private elementRef: ElementRef) {}
 
@@ -24,6 +24,7 @@ export class TableCellDirective implements OnChanges {
       elt.classList.add('slk-table-cell');
       elt.classList.add('slk-table-cell-' + this.align);
     }
+    this.applyStyle();
 
     elt.innerHTML = this.getText();
   }
@@ -74,5 +75,23 @@ export class TableCellDirective implements OnChanges {
       return Object.keys(style).map(key => `${key}:${style[key]}`).join(';');
     }
     return '';
+  }
+
+  private applyStyle() {
+    const elt = this.elementRef.nativeElement;
+    const tableElt = elt.closest('table');
+
+    // set default style
+    if (this.style && this.format !== 'image') {
+      Object.keys(this.style).forEach(key => {
+        elt.style[key] = this.style[key];
+      });
+    }
+
+    // add vertical align
+    const valign = tableElt.getAttribute('valign');
+    if (valign) {
+      //elt.style.verticalAlign = valign;
+    }
   }
 }

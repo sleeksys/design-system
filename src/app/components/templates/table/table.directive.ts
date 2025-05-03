@@ -6,7 +6,8 @@ import {AfterViewInit, Directive, ElementRef, Input, OnChanges} from '@angular/c
 export class TableDirective implements AfterViewInit {
 
   @Input() locale: 'de-DE' | 'en-EN' = 'en-EN';
-  @Input() format: 'striped' | null = null;
+  @Input() valign: 'top' | 'bottom' | 'middle' = 'middle';
+  @Input() format?: 'striped';
 
   constructor(private elementRef: ElementRef) {
   }
