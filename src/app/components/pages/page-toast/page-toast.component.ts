@@ -4,13 +4,13 @@ import {ButtonComponent} from '../../templates/button/button.component';
 import {ThemeColor} from '../../templates/model';
 
 @Component({
-  selector: 'page-accordion',
+  selector: 'page-toast',
   imports: [
     ToastComponent,
     ButtonComponent
   ],
   templateUrl: './page-toast.component.html',
-  styles: `code { margin-bottom: 50px; }`
+  styles: `code { margin-bottom: 30px; }`
 })
 export class PageToastComponent {
 

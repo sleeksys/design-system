@@ -5,6 +5,7 @@ import {PageButtonComponent} from './components/pages/page-button/page-button.co
 import {PageFormCheckboxComponent} from './components/pages/page-form-checkbox/page-form-checkbox.component';
 import {PageMaintenanceComponent} from './components/pages/page-maintenance/page-maintenance.component';
 import {PageAccordionComponent} from './components/pages/page-accordion/page-accordion.component';
+import {PagePaginationComponent} from './components/pages/page-pagination/page-pagination.component';
 import {PageTableComponent} from './components/pages/page-table/page-table.component';
 import {PageToastComponent} from './components/pages/page-toast/page-toast.component';
 
@@ -24,9 +25,9 @@ export const routes: Routes = [
       {path: 'accordion', component: PageAccordionComponent}, // TODO: add page Accordion
       {path: 'banner', component: PageMaintenanceComponent}, // TODO: add page Banner
       {path: 'modal', component: PageMaintenanceComponent}, // TODO: add page Modal
-      {path: 'pagination', component: PageMaintenanceComponent}, // TODO: add page Pagination
+      {path: 'pagination', component: PagePaginationComponent},
       {path: 'table', component: PageTableComponent},
-      {path: 'toast', component: PageToastComponent} // TODO: add page Toast
+      {path: 'toast', component: PageMaintenanceComponent} // not ready
     ]
   }
 ];

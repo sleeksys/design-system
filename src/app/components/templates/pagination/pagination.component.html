@@ -1,0 +1,18 @@
+<div *ngIf="display" [className]="'slk-pagination slk-pagination-' + align">
+  <span>
+    <a [className]="!hasPrev() ? 'disabled' : ''"
+       (click)="onPrevClick()">&laquo;</a>
+  </span>
+
+  <ng-container *ngFor="let page of pages">
+    <span>
+      <a [className]="page.active ? 'active' : ''"
+         (click)="onPageClick(page)">{{ page.value }}</a>
+    </span>
+  </ng-container>
+
+  <span>
+    <a [className]="!hasNext() ? 'disabled' : ''"
+       (click)="onNextClick()">&raquo;</a>
+  </span>
+</div>

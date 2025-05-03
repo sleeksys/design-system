@@ -1,0 +1,103 @@
+<div class="component">
+  <div class="component-title">
+    Pagination
+  </div>
+
+  <slk-pagination [max]="4"
+                  [current]="1"></slk-pagination>
+  <code>
+    <pre>{{ getCodeRaw(4, 1) }}</pre>
+  </code>
+
+  <slk-pagination [max]="10"
+                  [current]="5"></slk-pagination>
+  <code>
+    <pre>{{ getCodeRaw(10, 5) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    Pagination - Alignment
+  </div>
+
+  <slk-pagination [max]="3"
+                  [current]="1"
+                  [align]="'left'"></slk-pagination>
+  <code>
+    <pre>{{ getCodeRaw(3, 1, 'left') }}</pre>
+  </code>
+
+  <slk-pagination [max]="3"
+                  [current]="1"
+                  [align]="'center'"></slk-pagination>
+  <code>
+    <pre>{{ getCodeRaw(3, 1, 'center') }}</pre>
+  </code>
+
+  <slk-pagination [max]="3"
+                  [current]="1"
+                  [align]="'right'"></slk-pagination>
+  <code>
+    <pre>{{ getCodeRaw(3, 1, 'right') }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    Pagination - Event Handling
+  </div>
+
+  <slk-pagination [max]="3"
+                  [current]="1"
+                  (changed)="eventHandler($event)"></slk-pagination>
+  <code>
+    <pre>{{ getCodeRaw(3, 1, undefined, true) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    Pagination - Attributes
+  </div>
+
+  <table slkTable format="striped" valign="top">
+    <thead>
+    <tr>
+      <th slkTableCell>Attribut Name</th>
+      <th slkTableCell>Description</th>
+      <th slkTableCell>Possible Values</th>
+      <th slkTableCell>Default Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[max]</td>
+      <td slkTableCell>Indicates the max number of pages.</td>
+      <td slkTableCell></td>
+      <td slkTableCell>1</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[current]</td>
+      <td slkTableCell>Indicates the current active page.</td>
+      <td slkTableCell></td>
+      <td slkTableCell>1</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[align]</td>
+      <td slkTableCell>Alignment</td>
+      <td slkTableCell>left, center, right</td>
+      <td slkTableCell>center</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">(changed)</td>
+      <td slkTableCell>Event listener on page changed. Returns the selected page.</td>
+      <td slkTableCell></td>
+      <td slkTableCell></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

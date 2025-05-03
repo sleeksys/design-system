@@ -7,3 +7,8 @@ export interface SlkAccordionItem {
   content: string;
   active?: boolean;
 }
+
+export interface SlkPage {
+  value: string|number;
+  active?: boolean;
+}
