@@ -2,9 +2,47 @@
   <div class="component-title">Form Input</div>
 
   <slk-input></slk-input>
-
   <code>
-    <pre>{{ getCodeRaw('primary') }}</pre>
+    <pre>{{ getPreCodeInput() }}</pre>
+  </code>
+
+  <label>Predefined value</label>
+  <slk-input [value]="'Some text'"></slk-input>
+  <code>
+    <pre>{{ getPreCodeInput('Some text') }}</pre>
+  </code>
+
+  <label>Using Placeholder</label>
+  <slk-input [placeholder]="'Placeholder Text'"></slk-input>
+  <code>
+    <pre>{{ getPreCodeInput(undefined, 'Placeholder Text') }}</pre>
+  </code>
+
+  <label>Predefined MaxLength</label>
+  <slk-input [value]="'Lorem Ipsum is simply dummy text.'" [maxLength]="25"></slk-input>
+  <code>
+    <pre>{{ getPreCodeInput('Lorem Ipsum is simply dummy text.', undefined, 25) }}</pre>
+  </code>
+
+  <label>Required field</label>
+  <slk-input [required]="true"></slk-input>
+  <code>
+    <pre>{{ getPreCodeInput(undefined, undefined, undefined, true) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    Form Input - Pattern
+  </div>
+
+  <label>Required field</label>
+  <slk-input [inputType]="'tel'"
+             [value]="'12312312312'"
+             [pattern]="'[0-9]{3}-[0-9]{4}-[0-9]{4}'"></slk-input>
+  <code>
+    <pre>{{ getPreCodeInputPattern('12312312312', '[0-9]{3}-[0-9]{4}-[0-9]{4}') }}</pre>
   </code>
 </div>
 
@@ -73,34 +111,13 @@
 
 <div class="component mgn-t">
   <div class="component-title">
-    Alert - Text alignment
-  </div>
-
-  <slk-alert [align]="'left'">Alert - Text aligned <b>LEFT</b></slk-alert>
-  <code>
-    <pre>{{ getCodeRaw(null, 'left') }}</pre>
-  </code>
-
-  <slk-alert [align]="'center'">Alert - Text aligned <b>CENTER</b></slk-alert>
-  <code>
-    <pre>{{ getCodeRaw(null, 'center') }}</pre>
-  </code>
-
-  <slk-alert [align]="'right'">Alert - Text aligned <b>RIGHT</b></slk-alert>
-  <code>
-    <pre>{{ getCodeRaw(null, 'right') }}</pre>
-  </code>
-</div>
-
-
-<div class="component mgn-t">
-  <div class="component-title">
-    Alert - Attributes
+    Form Input - Attributes
   </div>
 
   <table slkTable format="striped" valign="top">
     <thead>
     <tr>
+      <th slkTableCell>Selector</th>
       <th slkTableCell>Attribut Name</th>
       <th slkTableCell>Description</th>
       <th slkTableCell>Possible Values</th>
@@ -109,16 +126,94 @@
     </thead>
     <tbody>
     <tr>
-      <td slkTableCell [style]="{color: '#C00000'}">[theme]</td>
-      <td slkTableCell>Theme color</td>
-      <td slkTableCell>primary, secondary, success, warning, danger, info, light, dark</td>
-      <td slkTableCell>secondary</td>
+      <td slkTableCell>slk-input</td>
+      <td slkTableCell [style]="{color: '#C00000'}">[inputType]</td>
+      <td slkTableCell>The field input's type</td>
+      <td slkTableCell>text, email, password, number, tel, date, file</td>
+      <td slkTableCell>text</td>
     </tr>
     <tr>
-      <td slkTableCell [style]="{color: '#C00000'}">[align]</td>
-      <td slkTableCell>Text&nbsp;alignment</td>
-      <td slkTableCell>left, center, right</td>
-      <td slkTableCell>left</td>
+      <td slkTableCell>slk-input</td>
+      <td slkTableCell [style]="{color: '#C00000'}">[pattern]</td>
+      <td slkTableCell>The pattern used to validate the input's value</td>
+      <td slkTableCell></td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell>
+        slk-input<br>
+        slk-input-email
+      </td>
+      <td slkTableCell [style]="{color: '#C00000'}">[value]</td>
+      <td slkTableCell>A predefined value</td>
+      <td slkTableCell></td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell>slk-input-number</td>
+      <td slkTableCell [style]="{color: '#C00000'}">[value]</td>
+      <td slkTableCell>A predefined numeric value</td>
+      <td slkTableCell></td>
+      <td slkTableCell>
+        <i>undefined</i>
+      </td>
+    </tr>
+    <tr>
+      <td slkTableCell>
+        slk-input<br>
+        slk-input-email<br>
+        slk-input-number
+      </td>
+      <td slkTableCell [style]="{color: '#C00000'}">[placeholder]</td>
+      <td slkTableCell>The text to show as placeholder</td>
+      <td slkTableCell></td>
+      <td slkTableCell>An empty string</td>
+    </tr>
+    <tr>
+      <td slkTableCell>
+        slk-input<br>
+        slk-input-email<br>
+        slk-input-number
+      </td>
+      <td slkTableCell [style]="{color: '#C00000'}">[required]</td>
+      <td slkTableCell>Indicates if the field is mandatory.</td>
+      <td slkTableCell>true, false</td>
+      <td slkTableCell>false</td>
+    </tr>
+    <tr>
+      <td slkTableCell>
+        slk-input<br>
+        slk-input-email
+      </td>
+      <td slkTableCell [style]="{color: '#C00000'}">[maxLength]</td>
+      <td slkTableCell>The maximum allowed input length</td>
+      <td slkTableCell></td>
+      <td slkTableCell>255</td>
+    </tr>
+    <tr>
+      <td slkTableCell>slk-input-number</td>
+      <td slkTableCell [style]="{color: '#C00000'}">[min]</td>
+      <td slkTableCell>The minimum allowed value</td>
+      <td slkTableCell></td>
+      <td slkTableCell>1.000.000.000<br>(1 billion)</td>
+    </tr>
+    <tr>
+      <td slkTableCell>slk-input-number</td>
+      <td slkTableCell [style]="{color: '#C00000'}">[max]</td>
+      <td slkTableCell>The maximum allowed value</td>
+      <td slkTableCell></td>
+      <td slkTableCell>0</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{'white-space': 'nowrap'}">slk-input-number</td>
+      <td slkTableCell [style]="{color: '#C00000'}">[step]</td>
+      <td slkTableCell>The allowed change step</td>
+      <td slkTableCell></td>
+      <td slkTableCell>1</td>
     </tr>
     </tbody>
   </table>

@@ -1,0 +1,11 @@
+<div [className]="'slk-input slk-input-' + inputType">
+  <input [className]="valid ? 'slk-input-match' : 'slk-input-error'"
+         [type]="inputType"
+         [(ngModel)]="value"
+         [required]="required"
+         [placeholder]="placeholder"
+         [maxLength]="maxLength"
+         (keyup)="validate()" />
+
+  <slk-alert *ngIf="!valid && errorMessage" [theme]="'danger'">{{ errorMessage }}</slk-alert>
+</div>

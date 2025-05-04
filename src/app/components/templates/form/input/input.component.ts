@@ -1,32 +1,26 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {SlkInputType} from '../../model';
 import {NgIf} from '@angular/common';
 import {AlertComponent} from '../../alert/alert.component';
 import {FormsModule} from '@angular/forms';
 
 @Component({
-  selector: 'slk-input-email',
+  selector: 'slk-input',
   imports: [
     NgIf,
     AlertComponent,
     FormsModule
   ],
-  template: `<div class="slk-input slk-input-email">
-    <input type="email"
-           [className]="!valid ? 'slk-input-error' : ''"
-           [(ngModel)]="value"
-           [required]="required"
-           [placeholder]="placeholder"
-           [maxLength]="maxLength"
-           (change)="validate()" />
-    <slk-alert *ngIf="!valid && errorMessage" [theme]="'danger'">{{ errorMessage }}</slk-alert>
-  </div>`,
+  templateUrl: './input.component.html',
   styleUrl: './input.component.scss'
 })
-export class InputEmailComponent implements OnInit {
+export class InputComponent implements OnInit {
 
-  @Input() value: string | undefined;
+  @Input() inputType: SlkInputType = 'text';
+  @Input() value: string = '';
   @Input() placeholder: string = '';
   @Input() maxLength: number = 255;
+  @Input() pattern: string|undefined;
   @Input() required: boolean = false;
 
   valid: boolean = false;
@@ -37,7 +31,7 @@ export class InputEmailComponent implements OnInit {
   }
 
   validate() {
-    if (this.value === '' || this.value === undefined) {
+    if (this.value === '') {
       this.errorMessage = null;
       this.valid = !this.required;
       return;
@@ -49,12 +43,12 @@ export class InputEmailComponent implements OnInit {
       return;
     }
 
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(this.value)) {
-      this.errorMessage = 'Invalid email format.';
+    if (this.pattern && !new RegExp(this.pattern).test(this.value)) {
+      this.errorMessage = 'Invalid input. Pattern mismatch';
       this.valid = false;
       return;
     }
+
     this.valid = true;
   }
 }

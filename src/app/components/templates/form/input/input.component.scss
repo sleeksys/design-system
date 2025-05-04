@@ -1,0 +1,20 @@
+.slk-input {
+  input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    margin-bottom: 10px;
+    border-radius: 0.25rem;
+    border: 2px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+
+    &.slk-input-error {
+      border-color: #dc3545;
+    }
+
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+  }
+}

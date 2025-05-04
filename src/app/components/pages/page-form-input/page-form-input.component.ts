@@ -29,6 +29,28 @@ export class PageFormInputComponent {
     return `<slk-alert ${props}>...</slk-alert>`
   }
 
+  getPreCodeInput(value?: string, placeholder?: string, maxLength?: number, required?: boolean) {
+    let valueProp = value ? `[value]="'${value}'"` : '';
+    let placeholderProp = placeholder ? `[placeholder]="'${placeholder}'"` : '';
+    let maxLengthProp = maxLength ? `[maxLength]="${maxLength}"` : '';
+    let requiredProp = required ? `[required]="${required}"` : '';
+    let props = `${valueProp} ${placeholderProp} ${maxLengthProp} ${requiredProp}`;
+
+    // clean up empty props
+    props = props.replace(/\s+/g, ' ').trim();
+    return `<slk-input ${props}></slk-input>`;
+  }
+
+  getPreCodeInputPattern(value: string, pattern?: string) {
+    let valueProp = value ? `[value]="'${value}'"` : '';
+    let patternProp = pattern ? `[pattern]="'${pattern}'"` : '';
+    let props = `${valueProp} ${patternProp}`;
+
+    // clean up empty props
+    props = props.replace(/\s+/g, ' ').trim();
+    return `<slk-input ${props}></slk-input>`;
+  }
+
   getPreCodeInputNumber(value?: number, min?: number, max?: number, step?: number, required?: boolean) {
     let valueProp = value ? `[value]="${value}"` : '';
     let minProp = min ? `[min]="${min}"` : '';
@@ -43,7 +65,7 @@ export class PageFormInputComponent {
   }
 
   getPreCodeInputEmail(value?: string, required?: boolean) {
-    let valueProp = value ? `[value]="${value}"` : '';
+    let valueProp = value ? `[value]="'${value}'"` : '';
     let requiredProp = required ? `[required]="${required}"` : '';
     let props = `${valueProp} ${requiredProp}`;
 

@@ -85,6 +85,7 @@ export class TableCellDirective implements OnChanges {
     if (this.style && this.format !== 'image') {
       Object.keys(this.style).forEach(key => {
         elt.style[key] = this.style[key];
+        elt.style.whi
       });
     }
 
