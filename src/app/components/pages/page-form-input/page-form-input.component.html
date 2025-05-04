@@ -1,0 +1,125 @@
+<div class="component">
+  <div class="component-title">Form Input</div>
+
+  <slk-input></slk-input>
+
+  <code>
+    <pre>{{ getCodeRaw('primary') }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    Form Input Number
+  </div>
+
+  <slk-input-number></slk-input-number>
+  <code>
+    <pre>{{ getPreCodeInputNumber() }}</pre>
+  </code>
+
+  <label>Required field</label>
+  <slk-input-number [required]="true"></slk-input-number>
+  <code>
+    <pre>{{ getPreCodeInputNumber(undefined, undefined, undefined, undefined, true) }}</pre>
+  </code>
+
+  <label>MIN = 5</label>
+  <slk-input-number [value]="10" [min]="5"></slk-input-number>
+  <code>
+    <pre>{{ getPreCodeInputNumber(10, 5) }}</pre>
+  </code>
+
+  <slk-input-number [value]="10" [max]="15"></slk-input-number>
+  <code>
+    <pre>{{ getPreCodeInputNumber(10, undefined, 15) }}</pre>
+  </code>
+
+  <label>MIN = 0, MAX = 55, STEP = 10</label>
+  <slk-input-number [value]="3"
+                    [min]="1"
+                    [max]="55"
+                    [step]="5"></slk-input-number>
+  <code>
+    <pre>{{ getPreCodeInputNumber(3, 1, 55, 5) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    Form Input Email
+  </div>
+
+  <slk-input-email></slk-input-email>
+  <code>
+    <pre>{{ getPreCodeInputEmail() }}</pre>
+  </code>
+
+  <label>Predefined value</label>
+  <slk-input-email [value]="'address@website.com'"></slk-input-email>
+  <code>
+    <pre>{{ getPreCodeInputEmail('address@website.com') }}</pre>
+  </code>
+
+  <label>Required field</label>
+  <slk-input-email [required]="true"></slk-input-email>
+  <code>
+    <pre>{{ getPreCodeInputEmail(undefined, true) }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    Alert - Text alignment
+  </div>
+
+  <slk-alert [align]="'left'">Alert - Text aligned <b>LEFT</b></slk-alert>
+  <code>
+    <pre>{{ getCodeRaw(null, 'left') }}</pre>
+  </code>
+
+  <slk-alert [align]="'center'">Alert - Text aligned <b>CENTER</b></slk-alert>
+  <code>
+    <pre>{{ getCodeRaw(null, 'center') }}</pre>
+  </code>
+
+  <slk-alert [align]="'right'">Alert - Text aligned <b>RIGHT</b></slk-alert>
+  <code>
+    <pre>{{ getCodeRaw(null, 'right') }}</pre>
+  </code>
+</div>
+
+
+<div class="component mgn-t">
+  <div class="component-title">
+    Alert - Attributes
+  </div>
+
+  <table slkTable format="striped" valign="top">
+    <thead>
+    <tr>
+      <th slkTableCell>Attribut Name</th>
+      <th slkTableCell>Description</th>
+      <th slkTableCell>Possible Values</th>
+      <th slkTableCell>Default Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[theme]</td>
+      <td slkTableCell>Theme color</td>
+      <td slkTableCell>primary, secondary, success, warning, danger, info, light, dark</td>
+      <td slkTableCell>secondary</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[align]</td>
+      <td slkTableCell>Text&nbsp;alignment</td>
+      <td slkTableCell>left, center, right</td>
+      <td slkTableCell>left</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
