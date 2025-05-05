@@ -1,0 +1,43 @@
+<div class="slk-dropdown">
+  <div class="slk-dropdown-header" (click)="toggle()">
+    <div class="slk-dropdown-header-title">
+      {{ label }}
+      <ng-container *ngIf="preview && current">
+        <span>: {{ current }}</span>
+      </ng-container>
+    </div>
+    <div class="slk-dropdown-header-icon">
+      <fa-icon *ngIf="opened"
+               [icon]="iconArrowUp"></fa-icon>
+      <fa-icon *ngIf="!opened"
+               [icon]="iconArrowDown"></fa-icon>
+    </div>
+  </div>
+
+  <div [className]="'slk-dropdown-content' + (opened ? ' active' : '')">
+    <div *ngFor="let item of items"
+          [className]="'slk-dropdown-item' + (item.selected ? ' active' : '')"
+         (click)="onItemClicked(item)">
+      {{ item.label }}
+
+      <div *ngIf="item.selected" class="icon">
+        <fa-icon [icon]="iconChecked"></fa-icon>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="multiselect" [className]="'slk-dropdown-footer' + (opened ? ' active' : '')">
+    <slk-button [theme]="'dark'"
+                [text]="'Select all'"
+                (onClick)="selectAll()"></slk-button>
+
+    <slk-button [theme]="'light'"
+                [text]="'Clear all'"
+                (onClick)="deselectAll()"></slk-button>
+
+    <slk-button [theme]="'success'"
+                [text]="'Apply Changes'"
+                [disabled]="!changedDetected"
+                (onClick)="apply()"></slk-button>
+  </div>
+</div>

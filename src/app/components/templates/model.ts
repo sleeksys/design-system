@@ -9,6 +9,13 @@ export interface SlkAccordionItem {
   active?: boolean;
 }
 
+export interface SlkDropdownItem {
+  value: string|number;
+  label: string;
+  disabled?: boolean;
+  selected?: boolean;
+}
+
 export interface SlkPage {
   value: string|number;
   active?: boolean;

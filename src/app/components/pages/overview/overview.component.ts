@@ -1,8 +1,11 @@
 import {Component, OnInit} from '@angular/core';
+import {DropdownComponent} from '../../templates/form/dropdown/dropdown.component';
 
 @Component({
   selector: 'page-overview',
-  imports: [],
+  imports: [
+    DropdownComponent
+  ],
   templateUrl: './overview.component.html',
   styles: `
     .component-title { font-size: 30px; }

@@ -1,0 +1,123 @@
+<div class="component">
+  <div class="component-title">
+    Dropdown - Empty list
+  </div>
+  <slk-dropdown [label]="'Dropdown label'"></slk-dropdown>
+  <code>
+    <pre>{{ getPreCode('Dropdown label') }}</pre>
+  </code>
+</div>
+
+
+<div class="component">
+  <div class="component-title">
+    Dropdown - Filled List
+  </div>
+  <slk-dropdown [label]="'Dropdown label'"
+                [items]="itemList1"></slk-dropdown>
+  <code>
+    <pre>{{ getPreCode('Dropdown label', true) }}</pre>
+  </code>
+</div>
+
+
+<div class="component">
+  <div class="component-title">
+    Dropdown - Filled List - Keep open on change
+  </div>
+  <slk-dropdown [label]="'Dropdown label'"
+                [items]="itemList1"
+                [collapse]="false"></slk-dropdown>
+  <code>
+    <pre>{{ getPreCode('Dropdown label', true, undefined, undefined, true) }}</pre>
+  </code>
+</div>
+
+
+<div class="component">
+  <div class="component-title">
+    Dropdown - Activated Preview
+  </div>
+  <slk-dropdown [label]="'Dropdown label'"
+                [items]="itemList1"
+                [preview]="true"></slk-dropdown>
+  <code>
+    <pre>{{ getPreCode('Dropdown label', true, undefined, true) }}</pre>
+  </code>
+</div>
+
+
+<div class="component">
+  <div class="component-title">
+    Dropdown - Multiselect
+  </div>
+  <slk-dropdown [label]="'Dropdown label'"
+                [items]="itemList2"
+                [multiselect]="true"></slk-dropdown>
+  <code>
+    <pre>{{ getPreCode('Dropdown label', true, true) }}</pre>
+  </code>
+</div>
+
+
+<div class="component">
+  <div class="component-title">
+    Dropdown - Multiselect and Activated Preview
+  </div>
+  <slk-dropdown [label]="'Dropdown label'"
+                [items]="itemList3"
+                [multiselect]="true"
+                [preview]="true"></slk-dropdown>
+  <code>
+    <pre>{{ getPreCode('Dropdown label', true, true, true) }}</pre>
+  </code>
+</div>
+
+<div class="component mgn-t">
+  <div class="component-title">
+    Dropdown - Attributes
+  </div>
+
+  <table slkTable format="striped" valign="top">
+    <thead>
+    <tr>
+      <th slkTableCell>Attribut Name</th>
+      <th slkTableCell>Description</th>
+      <th slkTableCell>Possible Values</th>
+      <th slkTableCell>Default Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[label]</td>
+      <td slkTableCell>The headline text</td>
+      <td slkTableCell></td>
+      <td slkTableCell>Dropdown label</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[items]</td>
+      <td slkTableCell>The options of type <span class="code">SlkDropdownItem</span></td>
+      <td slkTableCell></td>
+      <td slkTableCell>Empty array</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[multiselect]</td>
+      <td slkTableCell>Enable the multiselect mode.</td>
+      <td slkTableCell>true, false</td>
+      <td slkTableCell>false</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[preview]</td>
+      <td slkTableCell>Enable the preview of the selected option's label.</td>
+      <td slkTableCell>true, false</td>
+      <td slkTableCell>false</td>
+    </tr>
+    <tr>
+      <td slkTableCell [style]="{color: '#C00000'}">[collapse]</td>
+      <td slkTableCell>Indicates if the dropdown should collapse on item clicked.</td>
+      <td slkTableCell>true, false</td>
+      <td slkTableCell>true</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
