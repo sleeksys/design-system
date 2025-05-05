@@ -8,6 +8,11 @@
     opacity: .7;
   }
 
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
   &.slk-btn--primary {
     color: #ffffff;
     background-color: #315676;

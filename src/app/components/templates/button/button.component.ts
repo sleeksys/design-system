@@ -4,7 +4,7 @@ import {ThemeColor} from '../model';
 @Component({
   selector: 'slk-button',
   imports: [],
-  template: `<button class="slk-btn" #button></button>`,
+  template: `<button class="slk-btn" [disabled]="disabled" #button></button>`,
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent implements AfterViewInit {
@@ -12,6 +12,7 @@ export class ButtonComponent implements AfterViewInit {
   @Output() onClick = new EventEmitter();
   @Input() theme!: ThemeColor;
   @Input() text!: string;
+  @Input() disabled: boolean = false;
 
   @ViewChild('button') elt!: ElementRef;
 
