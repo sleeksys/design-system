@@ -5,3 +5,7 @@ The Design System provides the design fundamentals and elements for efficiently 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 
 URL: https://designsystem.sleeksys.com/
+
+# External assets
+- [Angular Font Awesome](https://github.com/FortAwesome/angular-fontawesome/)
+- [Free Solid SVG Icons](https://github.com/FortAwesome/angular-fontawesome/)
