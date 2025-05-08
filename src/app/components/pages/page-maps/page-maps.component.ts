@@ -41,7 +41,7 @@ export class PageMapsComponent implements AfterViewInit {
 
   private initMap(): void {
     this.map = Leaf.map('map')
-      .setView([49.426113, 11.038977], 9); // Center of the Nuremberg
+      .setView([49.426113, 11.038977], 9); // Center of Nuremberg
 
     Leaf.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
