@@ -20,7 +20,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
+  z-index: 500;
 
   img {
     height: 50px;
@@ -84,6 +84,10 @@ header {
     color: #315676;
     font-size: 24px;
     margin-bottom: 30px;
+
+    .component-subtitle {
+      color: #c00000;
+    }
   }
 
   pre {

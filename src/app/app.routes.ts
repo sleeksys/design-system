@@ -10,6 +10,7 @@ import {PageAccordionComponent} from './components/pages/page-accordion/page-acc
 import {PagePaginationComponent} from './components/pages/page-pagination/page-pagination.component';
 import {PageTableComponent} from './components/pages/page-table/page-table.component';
 import {PageToastComponent} from './components/pages/page-toast/page-toast.component';
+import {PageMapsComponent} from './components/pages/page-maps/page-maps.component';
 
 export const routes: Routes = [
   // add route for page-button
@@ -30,6 +31,10 @@ export const routes: Routes = [
       {path: 'pagination', component: PagePaginationComponent},
       {path: 'table', component: PageTableComponent},
       {path: 'toast', component: PageMaintenanceComponent} // not ready
+    ]
+  },
+  {path: 'utils', children: [
+      {path: 'maps', component: PageMapsComponent}
     ]
   }
 ];

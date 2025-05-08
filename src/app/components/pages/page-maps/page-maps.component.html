@@ -1,0 +1,59 @@
+<div class="component">
+  <div class="component-title">
+    Leaflet Map - Use Case
+    <div class="component-subtitle">
+      Sozialversicherungspflichtig Beschäftigte am Arbeitsort (30. Juni 2023)
+    </div>
+  </div>
+
+
+  <div id="map" style="height: 500px;"></div>
+
+  <div class="map-legend">
+    Anzahl der weiblich Beschäftigten in den einzelnen Landkreisen (in %)
+  </div>
+
+  <table slkTable format="striped" locale="de-DE">
+    <thead>
+    <tr>
+      <th slkTableCell>Landkreis</th>
+      <th slkTableCell [align]="'center'">Anzahl der Beschäftigte</th>
+      <th slkTableCell [align]="'right'">weiblich</th>
+      <th slkTableCell [align]="'right'"
+          [style]="{color: '#CCCCCC', 'font-weight': 300}">Prozentsatz</th>
+      <th slkTableCell [align]="'right'">männlich</th>
+      <th slkTableCell [align]="'right'"
+          [style]="{color: '#CCCCCC', 'font-weight': 300}">Prozentsatz</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of points">
+      <td [style]="{color: '#C00000', cursor: 'pointer'}"
+          (click)="openMark(p)">
+        {{ p.label }}
+      </td>
+      <td slkTableCell
+          [align]="'center'"
+          [format]="'number'"
+          [text]="p.total"></td>
+      <td slkTableCell
+          [align]="'right'"
+          [format]="'number'"
+          [text]="calculateMatch(p.total, p.woman)"></td>
+      <td slkTableCell
+          [align]="'right'"
+          [format]="'percentage'"
+          [text]="p.woman"></td>
+      <td slkTableCell
+          [align]="'right'"
+          [format]="'number'"
+          [text]="calculateMatch(p.total, p.man)"></td>
+      <td slkTableCell
+          [align]="'right'"
+          [format]="'percentage'"
+          [text]="p.man"></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
