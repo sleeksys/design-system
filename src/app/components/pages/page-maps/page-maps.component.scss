@@ -1,7 +1,18 @@
-#map {
-  width: 90%;
-  height: 500px;
-  max-width: 600px;
+.map {
+  width: 100%;
+  max-width: 100%;
+
+  &#map1 {
+    height: 200px;
+  }
+
+  &#map2 {
+    height: 300px;
+  }
+
+  &#map3 {
+    height: 500px;
+  }
 }
 
 .map-legend {

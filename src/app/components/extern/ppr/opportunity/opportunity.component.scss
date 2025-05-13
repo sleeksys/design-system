@@ -1,0 +1,44 @@
+#opportunityContainer {
+  #map {
+    height: 400px;
+  }
+
+  #filter {
+    margin: 20px 0;
+
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      background-color: #fefefe;
+      color: #818182;
+      border: 1px solid #818182;
+      border-radius: 5px;
+      padding: 5px 20px;
+      margin: 0 3px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #d4edda;
+        color: #155724;
+        border-color: #155724;
+      }
+
+      &.active {
+        background-color: #cce5ff;
+        color: #004085;
+        border-color: #004085;
+      }
+    }
+  }
+
+  table {
+    td.vehicle {
+      margin: 0 auto;
+
+      img {
+        width: 180px;
+        height: auto;
+      }
+    }
+  }
+}

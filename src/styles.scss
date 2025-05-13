@@ -160,10 +160,17 @@ header {
   margin-left: 10px;
 }
 
+.text-bold {
+  font-weight: bold;
+}
 
 .text-small {
   font-size: 80%;
   font-weight: 500;
+}
+
+.text-secondary {
+  color: #999999;
 }
 
 .text-muted {

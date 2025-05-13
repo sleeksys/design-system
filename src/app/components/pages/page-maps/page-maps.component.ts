@@ -8,9 +8,15 @@ export interface DemographyPoint {
   lat: number;
   lng: number;
   label: string;
-  total: number
+  total: number;
   woman: number;
   man: number;
+}
+
+export interface MapPoint {
+  lat: number;
+  lng: number;
+  label: string;
 }
 
 @Component({
@@ -35,12 +41,63 @@ export class PageMapsComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit(): void {
-    this.initMap();
+    this.initMap1();
+    this.initMap2();
+    this.initMap3();
     this.addMarkers();
   }
 
-  private initMap(): void {
-    this.map = Leaf.map('map')
+  private initMap1(): void {
+    const obj = Leaf.map('map1')
+      .setView([49.426113, 11.038977], 9); // Center of Nuremberg
+    const point = this.points[3];
+
+    Leaf.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(obj);
+
+    const marker = Leaf.marker([point.lat, point.lng])
+      .addTo(obj);
+    marker.bindPopup(`${point.label}`);
+    marker.openPopup();
+  }
+
+  private initMap2(): void {
+    const obj = Leaf.map('map2')
+      .setView([49.426113, 11.038977], 9); // Center of Nuremberg
+
+    Leaf.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(obj);
+
+    // Define two points
+    const pointNUE = this.points[3];  // Nuremberg
+    const pointANS = this.points[0];   // Ansbach
+
+    const pointA = Leaf.latLng(pointNUE.lat, pointNUE.lng);
+    const pointB = Leaf.latLng(pointANS.lat, pointANS.lng);
+
+    // Add markers for visualization
+    Leaf.marker(pointA).addTo(obj)
+      .bindPopup(pointNUE.label)
+      .openPopup();
+    Leaf.marker(pointB).addTo(obj)
+      .bindPopup(pointANS.label);
+
+    // Draw a line between the points
+    Leaf.polyline([pointA, pointB], { color: 'red' }).addTo(obj);
+
+    // Display the result
+    const elt = document.getElementById('map2Distance') as HTMLElement;
+    if (elt) {
+      const distance = pointA.distanceTo(pointB); // distance in meters
+      let d = (distance / 1000).toFixed(2);
+      elt.innerHTML = `(Calculated distance between ${pointNUE.label} and ${pointANS.label}: ${d} km)`;
+    }
+  }
+
+  private initMap3(): void {
+    this.map = Leaf.map('map3')
       .setView([49.426113, 11.038977], 9); // Center of Nuremberg
 
     Leaf.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

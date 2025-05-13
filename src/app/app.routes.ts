@@ -11,6 +11,7 @@ import {PagePaginationComponent} from './components/pages/page-pagination/page-p
 import {PageTableComponent} from './components/pages/page-table/page-table.component';
 import {PageToastComponent} from './components/pages/page-toast/page-toast.component';
 import {PageMapsComponent} from './components/pages/page-maps/page-maps.component';
+import {OpportunityComponent} from './components/extern/ppr/opportunity/opportunity.component';
 
 export const routes: Routes = [
   // add route for page-button
@@ -36,5 +37,9 @@ export const routes: Routes = [
   {path: 'utils', children: [
       {path: 'maps', component: PageMapsComponent}
     ]
-  }
+  },
+  {path: 'extern', children: [
+      {path: 'ppr/opportunity', component: OpportunityComponent}
+    ]
+  },
 ];

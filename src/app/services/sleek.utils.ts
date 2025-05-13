@@ -12,6 +12,10 @@ export class SleekUtils {
     return this.generateUUID().substring(0, 8);
   }
 
+  static generateRandomNumber(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   static capitalizeFirstLetter(text: string) {
     return text.charAt(0).toUpperCase() + text.slice(1);
   }

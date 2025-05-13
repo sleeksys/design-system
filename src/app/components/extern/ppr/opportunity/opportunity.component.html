@@ -1,0 +1,90 @@
+<div class="component">
+  <div class="component-title">
+    Sales Opportunity
+    <div class="text-muted text-small">
+      New Opportunities in your AREA
+    </div>
+  </div>
+
+  <div id="opportunityContainer">
+    <div id="map"></div>
+
+    <div id="filter">
+      <span [className]="(selectedCity == 'all') ? 'active' : ''"
+            (click)="showOpportunities('all')">Select all</span>
+      <span *ngFor="let city of cities"
+            [className]="(selectedCity == city) ? 'active' : ''"
+            (click)="showOpportunities(city)">{{ city }} ({{ countMatches(city) }})</span>
+    </div>
+
+    <table slkTable format="striped" locale="de-DE">
+      <thead>
+      <tr>
+        <th>Customer Information</th>
+        <th>Model of Interest</th>
+        <th>Maturity Date</th>
+        <th>Assignee</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <ng-container *ngFor="let opportunity of opportunities">
+        <tr *ngIf="opportunity.customer.address.city == selectedCity || selectedCity == 'all'">
+          <td class="customer-information">
+            <div class="text-bold">
+              {{ opportunity.customer.name }}
+            </div>
+            <div class="text-secondary">
+              Handy: {{ opportunity.customer.contact.phoneNumber }}
+            </div>
+            <div class="text-secondary">
+              Email: {{ opportunity.customer.contact.email }}
+            </div>
+            <div>&nbsp;</div>
+
+            <div>
+              <b>Adresse:</b>
+              {{ opportunity.customer.address.zipCode }} {{ opportunity.customer.address.city }} (-- km)
+            </div>
+
+            <div>
+              <b>Current Vehicle:</b>
+              {{ opportunity.vehicle.current.modelYear }} {{ opportunity.vehicle.current.modelName }}
+            </div>
+          </td>
+          <td class="vehicle">
+            <img src="https://designsystem.sleeksys.com//assets/images/porsche.jpg" alt="suggested-vehicle" />
+            <div class="text-secondary">
+              {{ opportunity.vehicle.suggested.modelYear }} {{ opportunity.vehicle.suggested.modelName }}
+            </div>
+          </td>
+          <td class="maturity">
+            <div class="text-bold">
+              {{ opportunity.contract.reason }}
+            </div>
+            <div>
+              {{ opportunity.contract.endDate | date: 'dd.MM.yyyy' }}
+            </div>
+            <div>&nbsp;</div>
+
+            <div class="text-bold">
+              Monatliche Rate
+            </div>
+            <div>
+              {{ opportunity.contract.monthlyRate | currency: 'EUR' }}
+            </div>
+          </td>
+          <td class="assignee">
+            <div>
+              {{ opportunity.assignee.advisor.name }}
+            </div>
+            <div class="text-secondary">
+              {{ opportunity.assignee.dealership.name }}
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
