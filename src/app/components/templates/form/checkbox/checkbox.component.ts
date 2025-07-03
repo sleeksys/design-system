@@ -32,7 +32,6 @@ export class CheckboxComponent implements AfterViewInit, OnInit {
     if (!this.label) {
       this.label = 'Checkbox label';
     }
-
   }
 
   onChanged(event: Event) {

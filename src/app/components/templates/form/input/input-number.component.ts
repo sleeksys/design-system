@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, signal} from '@angular/core';
 import {NgIf} from '@angular/common';
 import {AlertComponent} from '../../alert/alert.component';
 import {FormsModule} from '@angular/forms';
@@ -33,7 +33,7 @@ export class InputNumberComponent implements OnInit {
   @Input() placeholder: string = '';
   @Input() required: boolean = false;
 
-  valid: boolean = false;
+  valid = signal(false);
   errorMessage: string|null = 'Invalid input';
 
   ngOnInit() {
@@ -43,21 +43,21 @@ export class InputNumberComponent implements OnInit {
   validate() {
     if (this.value === undefined) {
       this.errorMessage = null;
-      this.valid = !this.required;
+      this.valid.set(!this.required);
       return;
     }
 
     const numValue = this.value;
     if (this.min > numValue) {
       this.errorMessage = `Expected min value ${this.min}.`;
-      this.valid = false;
+      this.valid.set(false);
       return;
     }
     if (this.max < numValue) {
       this.errorMessage = `Expected max value ${this.max}.`;
-      this.valid = false;
+      this.valid.set(false);
       return;
     }
-    this.valid = true;
+    this.valid.set(true);
   }
 }

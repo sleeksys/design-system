@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ButtonComponent} from '../../templates/button/button.component';
 import {ThemeColor} from '../../templates/model';
 
@@ -9,10 +9,7 @@ import {ThemeColor} from '../../templates/model';
   ],
   templateUrl: './page-button.component.html'
 })
-export class PageButtonComponent implements OnInit {
-
-  ngOnInit() {
-  }
+export class PageButtonComponent {
 
   getCodeRaw(theme: ThemeColor, appendEventListener?: boolean) {
     const eventCodeRaw = appendEventListener

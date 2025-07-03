@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {DropdownComponent} from '../../templates/form/dropdown/dropdown.component';
 import {SlkDropdownItem} from '../../templates/model';
 import {TableCellDirective} from '../../templates/table/table-cell.directive';

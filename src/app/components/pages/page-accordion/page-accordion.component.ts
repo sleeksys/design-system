@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {SlkAccordionItem} from '../../templates/model';
 import {AccordionComponent} from '../../templates/accordion/accordion.component';
 import {TableCellDirective} from '../../templates/table/table-cell.directive';
@@ -14,19 +14,12 @@ import {TableDirective} from '../../templates/table/table.directive';
   templateUrl: './page-accordion.component.html',
   styles: `code { margin-bottom: 30px; }`
 })
-export class PageAccordionComponent implements OnInit {
+export class PageAccordionComponent {
 
-  items1: SlkAccordionItem[] = [];
-  items2: SlkAccordionItem[] = [];
-  items3: SlkAccordionItem[] = [];
-  items4: SlkAccordionItem[] = [];
-
-  ngOnInit() {
-    this.items1 = this.getItems();
-    this.items2 = this.getItems();
-    this.items3 = this.getItems();
-    this.items4 = this.getItems(true);
-  }
+  items1: SlkAccordionItem[] = this.getItems();
+  items2: SlkAccordionItem[] = this.getItems();
+  items3: SlkAccordionItem[] = this.getItems();
+  items4: SlkAccordionItem[] = this.getItems(true);
 
   private getItems(readonly?: boolean): SlkAccordionItem[] {
     let items: SlkAccordionItem[] = [];

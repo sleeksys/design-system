@@ -28,49 +28,48 @@
       </thead>
 
       <tbody>
-      <ng-container *ngFor="let opportunity of opportunities">
+      <ng-container *ngFor="let opportunity of mappedOpportunities">
         <tr *ngIf="opportunity.customer.address.city == selectedCity || selectedCity == 'all'">
           <td class="customer-information">
             <div class="text-bold">
               {{ opportunity.customer.name }}
             </div>
+            <div class="text-secondary">{{ opportunity.customer.contact.email }}</div>
             <div class="text-secondary">
-              Handy: {{ opportunity.customer.contact.phoneNumber }}
-            </div>
-            <div class="text-secondary">
-              Email: {{ opportunity.customer.contact.email }}
+              {{ opportunity.vehicle.current.modelYear }} {{ opportunity.vehicle.current.modelName }}
             </div>
             <div>&nbsp;</div>
 
-            <div>
-              <b>Adresse:</b>
-              {{ opportunity.customer.address.zipCode }} {{ opportunity.customer.address.city }} (-- km)
+            <div class="text-bold text-small text-uppercase">Location</div>
+            <div class="text-secondary">
+              {{ opportunity.customer.address.zipCode }} {{ opportunity.customer.address.city }}
+              ({{  getDistanceToDealership(opportunity) }})
             </div>
 
-            <div>
-              <b>Current Vehicle:</b>
-              {{ opportunity.vehicle.current.modelYear }} {{ opportunity.vehicle.current.modelName }}
-            </div>
           </td>
           <td class="vehicle">
-            <img src="https://designsystem.sleeksys.com//assets/images/porsche.jpg" alt="suggested-vehicle" />
-            <div class="text-secondary">
+            <img src="{{ getVehiclePictureUrl(opportunity.vehicle.suggested.modelName) }}"
+                 alt="suggested-vehicle" />
+            <div class="text-secondary text-center">
               {{ opportunity.vehicle.suggested.modelYear }} {{ opportunity.vehicle.suggested.modelName }}
             </div>
           </td>
           <td class="maturity">
-            <div class="text-bold">
+            <div class="text-bold text-small text-uppercase">
               {{ opportunity.contract.reason }}
             </div>
-            <div>
+            <div class="text-secondary">
               {{ opportunity.contract.endDate | date: 'dd.MM.yyyy' }}
+            </div>
+            <div class="text-secondary">
+              {{ calculateTimeRemainingToMaturity(opportunity) }} left
             </div>
             <div>&nbsp;</div>
 
-            <div class="text-bold">
-              Monatliche Rate
+            <div class="text-bold text-small text-uppercase">
+              Monthly Payment
             </div>
-            <div>
+            <div class="text-secondary">
               {{ opportunity.contract.monthlyRate | currency: 'EUR' }}
             </div>
           </td>

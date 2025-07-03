@@ -1,5 +1,5 @@
 <div [className]="'slk-input slk-input-' + inputType">
-  <input [className]="valid ? 'slk-input-match' : 'slk-input-error'"
+  <input [className]="valid() ? 'slk-input-match' : 'slk-input-error'"
          [type]="inputType"
          [(ngModel)]="value"
          [required]="required"

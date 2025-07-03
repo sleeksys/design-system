@@ -26,14 +26,11 @@ export class OpportunityService {
     const opportunities: Opportunity[] = [];
 
     for (let i = 0; i < count; i++) {
-      const firstName = `Max ${i+1}`;
-      const lastName = ` Mustermann ${i+1}`;
       const modelCurrent = this.getRandomElement(modelNames);
       const modelSuggested = this.getRandomElement(modelNames);
 
-      const startDate = new Date(2021, 0, 1 + Math.floor(Math.random() * 365));
-      const endDate = new Date(startDate);
-      endDate.setFullYear(startDate.getFullYear() + 3);
+      const startDate = this.getMaturityStartDate();
+      const endDate = this.getMaturityEndDate();
 
       const dealership = this.getRandomElement(dealerships);
       const city = this.getRandomElement(cities);
@@ -41,7 +38,7 @@ export class OpportunityService {
       opportunities.push({
         customer: {
           id: SleekUtils.generateHash(),
-          name: `${firstName} ${lastName}`,
+          name: `Max Mustermann ${i+1}`,
           address: {
             street: `Hauptstrasse ${i + 1}`,
             zipCode: `90${100 + i}`,
@@ -53,7 +50,6 @@ export class OpportunityService {
           },
           contact: {
             email: `max.muster${i + 1}@example.de`,
-            phoneNumber: `+49 151${SleekUtils.generateRandomNumber(1000000, 9999999)}`
           }
         },
         vehicle: {
@@ -84,6 +80,26 @@ export class OpportunityService {
     }
 
     return opportunities;
+  }
+
+  /** Generate a random date 2,5 years in the past. */
+  private getMaturityStartDate(): Date {
+    const today = new Date();
+    const startDate = new Date(today);
+    startDate.setFullYear(today.getFullYear() - 2, today.getMonth() - 6);
+    // random day of the month between 1 and 28
+    startDate.setDate(Math.floor(Math.random() * 28) + 1);
+    return startDate;
+  }
+
+  /** Generate a random date within the next 6 months. */
+  private getMaturityEndDate(): Date {
+    const today = new Date();
+    const endDate = new Date(today);
+    endDate.setFullYear(today.getFullYear(), today.getMonth() + Math.floor(Math.random() * 6));
+    // random day of the month between 1 and 28
+    endDate.setDate(Math.floor(Math.random() * 28) + 1);
+    return endDate;
   }
 
   /** Generate random latitude for following cities Nürnberg, Fürth, Erlangen, Bamberg */

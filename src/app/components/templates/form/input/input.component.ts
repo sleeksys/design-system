@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, signal} from '@angular/core';
 import {SlkInputType} from '../../model';
 import {NgIf} from '@angular/common';
 import {AlertComponent} from '../../alert/alert.component';
@@ -23,7 +23,7 @@ export class InputComponent implements OnInit {
   @Input() pattern: string|undefined;
   @Input() required: boolean = false;
 
-  valid: boolean = false;
+  valid = signal(false);
   errorMessage: string|null = 'Invalid input';
 
   ngOnInit() {
@@ -33,22 +33,22 @@ export class InputComponent implements OnInit {
   validate() {
     if (this.value === '') {
       this.errorMessage = null;
-      this.valid = !this.required;
+      this.valid.set(!this.required);
       return;
     }
 
     if (this.value.length > this.maxLength) {
       this.errorMessage = `Maximum allowed length ${this.maxLength} is exceeded.`;
-      this.valid = false;
+      this.valid.set(false);
       return;
     }
 
     if (this.pattern && !new RegExp(this.pattern).test(this.value)) {
       this.errorMessage = 'Invalid input. Pattern mismatch';
-      this.valid = false;
+      this.valid.set(false);
       return;
     }
 
-    this.valid = true;
+    this.valid.set(true);
   }
 }

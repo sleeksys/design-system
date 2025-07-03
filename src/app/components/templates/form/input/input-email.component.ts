@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, signal} from '@angular/core';
 import {NgIf} from '@angular/common';
 import {AlertComponent} from '../../alert/alert.component';
 import {FormsModule} from '@angular/forms';
@@ -12,7 +12,7 @@ import {FormsModule} from '@angular/forms';
   ],
   template: `<div class="slk-input slk-input-email">
     <input type="email"
-           [className]="!valid ? 'slk-input-error' : ''"
+           [className]="!valid() ? 'slk-input-error' : ''"
            [(ngModel)]="value"
            [required]="required"
            [placeholder]="placeholder"
@@ -29,7 +29,7 @@ export class InputEmailComponent implements OnInit {
   @Input() maxLength: number = 255;
   @Input() required: boolean = false;
 
-  valid: boolean = false;
+  valid = signal(false);
   errorMessage: string|null = 'Invalid input';
 
   ngOnInit() {
@@ -39,22 +39,22 @@ export class InputEmailComponent implements OnInit {
   validate() {
     if (this.value === '' || this.value === undefined) {
       this.errorMessage = null;
-      this.valid = !this.required;
+      this.valid.set(!this.required);
       return;
     }
 
     if (this.value.length > this.maxLength) {
       this.errorMessage = `Maximum allowed length ${this.maxLength} is exceeded.`;
-      this.valid = false;
+      this.valid.set(false);
       return;
     }
 
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailPattern.test(this.value)) {
       this.errorMessage = 'Invalid email format.';
-      this.valid = false;
+      this.valid.set(false);
       return;
     }
-    this.valid = true;
+    this.valid.set(true);
   }
 }

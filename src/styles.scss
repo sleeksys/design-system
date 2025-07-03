@@ -164,6 +164,10 @@ header {
   font-weight: bold;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-small {
   font-size: 80%;
   font-weight: 500;
@@ -175,6 +179,10 @@ header {
 
 .text-muted {
   color: #999999;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
 }
 
 

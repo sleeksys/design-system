@@ -12,8 +12,7 @@ export interface Opportunity {
       }
     },
     contact: {
-      email: string,
-      phoneNumber: string
+      email: string
     }
   },
   vehicle: {

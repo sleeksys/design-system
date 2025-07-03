@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {CheckboxComponent} from '../../templates/form/checkbox/checkbox.component';
 import {ThemeColor} from '../../templates/model';
 
@@ -9,10 +9,7 @@ import {ThemeColor} from '../../templates/model';
   ],
   templateUrl: './page-form-checkbox.component.html'
 })
-export class PageFormCheckboxComponent implements OnInit {
-
-  ngOnInit() {
-  }
+export class PageFormCheckboxComponent {
 
   getCodeRaw(switchMode: boolean,
              theme?: ThemeColor|null,

@@ -1,18 +1,20 @@
-<div *ngIf="display" [className]="'slk-pagination slk-pagination-' + align">
-  <span>
-    <a [className]="!hasPrev() ? 'disabled' : ''"
-       (click)="onPrevClick()">&laquo;</a>
-  </span>
-
-  <ng-container *ngFor="let page of pages">
+@if (display()) {
+  <div [className]="'slk-pagination slk-pagination-' + align">
     <span>
-      <a [className]="page.active ? 'active' : ''"
-         (click)="onPageClick(page)">{{ page.value }}</a>
+      <a [className]="!hasPrev() ? 'disabled' : ''"
+         (click)="onPrevClick()">&laquo;</a>
     </span>
-  </ng-container>
 
-  <span>
-    <a [className]="!hasNext() ? 'disabled' : ''"
-       (click)="onNextClick()">&raquo;</a>
-  </span>
-</div>
+    @for (page of pages(); track page.trackId) {
+      <span>
+        <a [class.active]="page.active"
+           (click)="onPageClick(page)">{{ page.value }}</a>
+      </span>
+    }
+
+    <span>
+      <a [className]="!hasNext() ? 'disabled' : ''"
+         (click)="onNextClick()">&raquo;</a>
+    </span>
+  </div>
+}

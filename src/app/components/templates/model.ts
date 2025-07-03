@@ -19,4 +19,5 @@ export interface SlkDropdownItem {
 export interface SlkPage {
   value: string|number;
   active?: boolean;
+  trackId?: string;
 }
